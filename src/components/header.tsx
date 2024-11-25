@@ -1,31 +1,10 @@
 import Image from "next/image";
-import router from "next/router";
-import { use, useCallback, useEffect, useState } from "react";
 
 export const Header:React.FC = () => {
 
-    let colorHeader = "bg-transparent";
+    let colorHeader = "bg-primary";
 
-    /*const [scrollPosition, setScrollPosition] = useState(0);
-    const handleScrollWindow = useCallback(() => {
-        const position = window.scrollY;
-        setScrollPosition(position);
-        if(position > 300) colorHeader = "bg-primary";
-        else colorHeader = "bg-transparent";
-    }, []);
-
-    const handleScrollWindow = useCallback(() => {
-        console.log("scrolled");
-    }, []);
-
-    useEffect(() => {
-        console.log("useffect started");
-        window.addEventListener('scroll', handleScrollWindow);
-        return () => window.removeEventListener('scroll', handleScrollWindow);
-    }, [handleScrollWindow]);*/
-    
-
-    return <header className={`flex fixed ${colorHeader} place-content-center w-full h-1/6`}>
+    return <header className={`flex fixed ${colorHeader} w-full h-1/6 z-50 place-content-center`}>
         <div className="w-1/6">
 
         </div>
