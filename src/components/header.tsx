@@ -1,17 +1,50 @@
+import Image from "next/image";
+import router from "next/router";
+import { use, useCallback, useEffect, useState } from "react";
+
 export const Header:React.FC = () => {
-    return <header className="flex bg-primary place-content-center">
+
+    let colorHeader = "bg-transparent";
+
+    /*const [scrollPosition, setScrollPosition] = useState(0);
+    const handleScrollWindow = useCallback(() => {
+        const position = window.scrollY;
+        setScrollPosition(position);
+        if(position > 300) colorHeader = "bg-primary";
+        else colorHeader = "bg-transparent";
+    }, []);
+
+    const handleScrollWindow = useCallback(() => {
+        console.log("scrolled");
+    }, []);
+
+    useEffect(() => {
+        console.log("useffect started");
+        window.addEventListener('scroll', handleScrollWindow);
+        return () => window.removeEventListener('scroll', handleScrollWindow);
+    }, [handleScrollWindow]);*/
+    
+
+    return <header className={`flex fixed ${colorHeader} place-content-center w-full h-1/6`}>
         <div className="w-1/6">
 
         </div>
-        <div className="navbar text-background text-2xl w-2/3">
+        <div className="navbar text-background text-xl w-2/3">
             <div className="navbar-start">
-                LOGO
+                <div className="relative h-24 w-24">
+                    <Image className="flex rounded-full object-cover"
+                    src={"/simon_avatar.jpg"}
+                    layout="fill"
+                    objectFit="cover"
+                    alt="simon avatar"
+                    />
+                </div>
             </div>
 
             <div className="navbar-end">
-                <div className="pr-3 transition ease-in-out duration-300 hover:text-foreground">About me</div>
-                <div className="pr-3 transition ease-in-out duration-300 hover:text-foreground">Skills</div>
-                <div className="pr-3 transition ease-in-out duration-300 hover:text-foreground">Projects</div>
+                <div className="pr-7 transition ease-in-out duration-300 hover:text-foreground">About me</div>
+                <div className="pr-7 transition ease-in-out duration-300 hover:text-foreground">Skills</div>
+                <div className="pr-7 transition ease-in-out duration-300 hover:text-foreground">Projects</div>
                 <div className="transition ease-in-out duration-300 hover:text-foreground">Contact</div>
             </div>
         </div>
