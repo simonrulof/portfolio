@@ -1,6 +1,7 @@
 import Image from "next/image";
 import localFont from "next/font/local";
 import { useCallback, useEffect } from "react";
+import { Skill } from "@/components/skill";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -24,6 +25,7 @@ export default function Home() {
       window.addEventListener('scroll', handleScrollWindow);
       return () => window.removeEventListener('scroll', handleScrollWindow);
   }, [handleScrollWindow]);
+
 
 
   return (
@@ -58,10 +60,34 @@ export default function Home() {
         <div className="h-[35vh] w-full bg-primary text-background">
           <div className="h-full w-2/3 ml-[16%] mr-[17%] place-content-center text-center">
             <h3 className="text-5xl font-bold pl-4">Actuellement</h3>
-            <p className="w-full pl-4 pt-4 text-xl text-balance">
+            <p className="w-full pl-4 pt-4 text-xl">
               Looking for a job
             </p>
             
+          </div>
+        </div>
+
+        <div className="">
+          <div className="flex h-full w-[2/3] ml-[16%] mr-[17%]">
+            <div className="h-full w-[60%]">
+              <div className="h-full w-[90%]">
+              <Skill skill_name={"Test"} skill_level={45} />
+              </div>
+            </div>
+            <div className="h-full w-[40%] bg-red-500">
+              <div className="h-full w-full p-4">
+                <div className="relative w-full pb-[142%] bg-green-500">
+                  <Image className="object-contains"
+                  src="/CV_BERLANGA_SIMON.jpg"
+                  alt="CV of the author"
+                  fill={true}
+                  />
+                </div>
+                <div className="flex pt-4 text-align-center place-content-center w-full">
+                  <a href="/CV_BERLANGA_SIMON.pdf" className="btn items-center text-2xl bg-primary text-background" download>Download PDF</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
